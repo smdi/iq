@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title   %}
+
+
+Islamic Quora
+
+{% endblock%}
+
+{% block page_content %}
+
+ <div class="page-header">
+
+     <h1>Islamic Quora Work in progress</h1>
+     <!--<p>{{moment(current_time).format('LLLL')}}</p>-->
+     <!--<p>{{moment(current_time).fromNow(refresh=True)}}</p>-->
+
+
+ </div>
+<div class = "container">
+
+     <h3> {%if not known %}
+         {{question}}</h3><br><p>{{name}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{moment(current_time).fromNow(refresh=True)}}</p>
+
+         {% else %}
+         <h3>{{question}}</h3><br><p>has already posted&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{moment(current_time).fromNow(refresh=True)}}</p>
+
+     {% endif %}
+
+</div>
+
+{{wtf.quick_form(form)}}
+{% endblock%}
